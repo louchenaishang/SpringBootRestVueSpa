@@ -14,6 +14,11 @@ spring:
     locale: zh_CN
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss.SSS
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: springboot
 
 # Logging configuration
 logging:

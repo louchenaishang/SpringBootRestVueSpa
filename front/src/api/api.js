@@ -19,12 +19,22 @@ axios.interceptors.response.use(function (response) {
 
 let base = '/api'
 
-const getCity = params => {
+const getCityList = params => {
   return axios.get(`${base}/city`, params)
 }
 
+const saveCity = params => {
+  return axios.post(`${base}/city`, params)
+}
+
+const deleteCity = params => {
+  return axios.delete(`${base}/city/`+params.id)
+}
+
 const Api = {
-  getCity
+  getCityList,
+  saveCity,
+  deleteCity
 }
 
 export default Api
