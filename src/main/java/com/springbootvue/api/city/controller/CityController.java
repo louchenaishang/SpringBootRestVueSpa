@@ -1,7 +1,7 @@
-package com.springbootvue.api.controller;
+package com.springbootvue.api.city.controller;
 
-import com.springbootvue.api.model.City;
-import com.springbootvue.api.repository.CityRepository;
+import com.springbootvue.api.city.model.City;
+import com.springbootvue.api.city.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +32,11 @@ public class CityController {
     public Boolean deleteOne(@PathVariable String id) {
         cityRepository.delete(id);
         return true;
+    }
+
+    @GetMapping(path = "count")
+    public Long count(@RequestParam String name) {
+        return cityRepository.countNameCustom(name);
     }
 
 }

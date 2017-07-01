@@ -1,4 +1,4 @@
-package com.springbootvue.api.model;
+package com.springbootvue.api.city.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
