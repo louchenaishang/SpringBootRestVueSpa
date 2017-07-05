@@ -88,7 +88,7 @@ public class RandomMock {
         int index = getNum(0, road.length - 1);
         String first = road[index];
         String second = String.valueOf(getNum(11, 150)) + "号";
-        String third = "-" + getNum(1, 20) + "-" + getNum(1, 10);
+        String third = "-" + getNum(1, 20) + "层" + "-" + getNum(1, 10) + "室";
         return first + second + third;
     }
 
@@ -97,8 +97,8 @@ public class RandomMock {
      *
      * @return
      */
-    public static Map getData() {
-        Map map = new HashMap();
+    public static Map<String,String> getData() {
+        Map<String,String> map = new HashMap();
         map.put("name", getChineseName());
         map.put("sex", name_sex);
         map.put("road", getRoad());
