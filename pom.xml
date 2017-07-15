@@ -45,6 +45,7 @@
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <commons-io.version>2.5</commons-io.version>
+        <hibernate.version>5.2.8.Final</hibernate.version>
         <hibernate-search.version>5.7.1.Final</hibernate-search.version>
     </properties>
 
@@ -95,7 +96,13 @@
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
