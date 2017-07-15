@@ -6,6 +6,7 @@ import com.test.base.BaseTest;
 import com.test.base.RandomMock;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 
@@ -18,6 +19,7 @@ public class UserTest extends BaseTest {
     private UserRepository userRepository;
 
     @Test
+    @Transactional
     public void init(){
         userRepository.deleteAll();
         for (int i = 0; i < 100; i++) {

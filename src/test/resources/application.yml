@@ -38,7 +38,11 @@ spring:
       hibernate.format_sql: true
       hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
       hibernate.current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
-
+      hibernate.search.default.indexmanager: elasticsearch
+      hibernate.search.default.elasticsearch.required_index_status: yellow
+      hibernate.search.default.elasticsearch.host: http://192.168.99.100:9200
+      hibernate.search.default.elasticsearch.username:
+      hibernate.search.default.elasticsearch.password:
 # Logging configuration
 logging:
   level:
