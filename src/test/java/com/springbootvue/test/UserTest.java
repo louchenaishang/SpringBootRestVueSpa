@@ -20,7 +20,7 @@ public class UserTest extends BaseTest {
     @Test
     public void init(){
         userRepository.deleteAll();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             Map<String,String> data = RandomMock.getData();
             User user = new User();
             user.setName(data.get("name"));

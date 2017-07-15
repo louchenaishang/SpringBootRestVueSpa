@@ -3,10 +3,9 @@ package com.springbootvue.api.user.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.IndexDirection;
-import org.springframework.data.mongodb.core.index.Indexed;
 
+
+import javax.persistence.*;
 import java.util.Date;
 
 
@@ -16,27 +15,34 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "User")
 public class User {
 
     @Id
-    private String id;
+    @Column
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
-    @Indexed(unique=true, direction= IndexDirection.DESCENDING, dropDups=true)
+    @Column
     private String name;
 
-    @Indexed(unique=true, direction= IndexDirection.DESCENDING, dropDups=true)
+    @Column
     private String tel;
 
+    @Column
     private String password;
 
+    @Column
     private String sex;
 
-    @Indexed(unique=true, direction= IndexDirection.DESCENDING, dropDups=true)
+    @Column
     private String email;
 
-    @Indexed(unique=true, direction= IndexDirection.DESCENDING, dropDups=true)
+    @Column
     private String road;
 
+    @Column
     private Date createTime = new Date();
 
 }
