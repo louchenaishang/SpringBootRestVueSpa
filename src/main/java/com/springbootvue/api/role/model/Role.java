@@ -1,4 +1,4 @@
-package com.springbootvue.api.user.model;
+package com.springbootvue.api.role.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,21 +8,25 @@ import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Resolution;
 
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 
 /**
- * Created by louchen on 2017/7/05.
+ * Created by louchen on 2017/7/27.
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "User")
+@Table(name = "Role")
 @Indexed
-public class User {
+public class Role {
 
     @Id
     @Column
@@ -31,35 +35,12 @@ public class User {
 
     @Column
     @Field
-    private String username;
-
-    @Column
-    @Field
-    private String tel;
-
-    @Column
-    private String password;
-
-    @Column
-    private String sex;
-
-    @Column
-    @Field
-    private String email;
-
-    @Column
-    @Field
-    private String road;
+    private String name;
 
     @Column
     @Field
     @DateBridge(resolution = Resolution.SECOND)
     private Date createTime = new Date();
-
-    @Column
-    @Field
-    @DateBridge(resolution = Resolution.SECOND)
-    private Date lastPasswordResetDate;
 
 }
 

@@ -3,7 +3,15 @@ package com.springbootvue.api.city.controller;
 import com.springbootvue.api.city.model.City;
 import com.springbootvue.api.city.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -12,6 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(path = "/api/city")
+@PreAuthorize("hasRole('USER')")
 public class CityController {
 
     @Autowired
@@ -29,14 +38,14 @@ public class CityController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public Boolean deleteOne(@PathVariable String id) {
+    public Boolean deleteOne(@PathVariable Long id) {
         cityRepository.delete(id);
         return true;
     }
 
     @GetMapping(path = "count")
     public Long count(@RequestParam String name) {
-        return cityRepository.countNameCustom(name);
+        return 0l;
     }
 
 }

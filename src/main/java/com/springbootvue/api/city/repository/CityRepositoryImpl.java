@@ -1,30 +1,19 @@
 package com.springbootvue.api.city.repository;
 
-import com.springbootvue.api.city.model.City;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.BasicQuery;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
+
+import javax.persistence.EntityManager;
+
 
 /**
  * Created by louchen on 2017/7/1.
  */
+@Slf4j
 public class CityRepositoryImpl implements CityRepositoryCustom {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
-
     @Autowired
-    private MongoTemplate mongoTemplate;
+    private EntityManager entityManager;
 
-    @Override
-    public Long countNameCustom(String name) {
-        Query query = new Query();
-        query.addCriteria(Criteria.where("name").regex(name));
-//        BasicQuery query = new BasicQuery("{\"name\": {$regex : '" + name + "'} }");
-        return mongoTemplate.count(query, City.class);
-    }
 
 }

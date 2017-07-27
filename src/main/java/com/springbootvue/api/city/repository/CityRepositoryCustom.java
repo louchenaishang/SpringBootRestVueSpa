@@ -5,6 +5,4 @@ package com.springbootvue.api.city.repository;
  */
 public interface CityRepositoryCustom {
 
-    Long countNameCustom(String name);
-
 }

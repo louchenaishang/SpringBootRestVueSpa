@@ -1,5 +1,6 @@
 package com.springbootvue;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +11,7 @@ import java.util.Arrays;
  * Created by louchen on 2017/6/28.
  */
 @SpringBootApplication
+@Slf4j
 public class Application {
 
     public static void main(final String... args) {
@@ -18,7 +20,7 @@ public class Application {
 
         Arrays.stream(beanNames)
                 .sorted()
-                .forEach(System.out::println);
+                .forEach(log::info);
     }
 
 }

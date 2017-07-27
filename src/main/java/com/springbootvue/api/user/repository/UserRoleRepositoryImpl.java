@@ -5,11 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 
-/**
- * Created by louchen on 2017/7/1.
- */
 @Slf4j
-public class UserRepositoryImpl implements UserRepositoryCustom {
+public class UserRoleRepositoryImpl implements UserRoleRepositoryCustom {
 
     @Autowired
     private EntityManager entityManager;

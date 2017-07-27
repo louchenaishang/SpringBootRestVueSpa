@@ -47,6 +47,7 @@
         <commons-io.version>2.5</commons-io.version>
         <hibernate.version>5.2.8.Final</hibernate.version>
         <hibernate-search.version>5.7.1.Final</hibernate-search.version>
+        <jjwt.version>0.7.0</jjwt.version>
     </properties>
 
     <dependencies>
@@ -67,10 +68,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -113,6 +110,11 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-search-elasticsearch</artifactId>
             <version>${hibernate-search.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jjwt.version}</version>
         </dependency>
     </dependencies>
 
