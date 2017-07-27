@@ -14,6 +14,10 @@ spring:
     locale: zh_CN
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss.SSS
+  redis:
+    host: 192.168.99.100
+    password:
+    port: 6379
   data:
     mongodb:
       host: 192.168.99.100
