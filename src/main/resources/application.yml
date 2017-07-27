@@ -20,14 +20,9 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss.SSS
   redis:
-    host: 192.168.99.100
+    host: localhost
     password:
     port: 6379
-  data:
-    mongodb:
-      host: 192.168.99.100
-      port: 27017
-      database: springboot
   datasource:
     primary:
       url: jdbc:mysql://localhost:3306/springboot
