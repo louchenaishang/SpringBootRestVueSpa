@@ -65,6 +65,7 @@ jwt:
       path: auth
       refresh: refresh
       register: "auth/register"
+      principal: "auth/principal"
 
 
 # Logging configuration
